@@ -1,0 +1,56 @@
+
+services:
+  # Banco de Dados PostgreSQL
+  db:
+    image: postgres:13-alpine
+    container_name: telephony_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    # Carrega as variáveis do arquivo .env para configurar o banco
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    ports:
+      - "5432:5432" # Expõe a porta do DB para o seu computador (para debug)
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # API Python/FastAPI
+  api:
+    build:
+      context: ./backend # Diz para construir a imagem usando o Dockerfile na pasta 'backend'
+    container_name: telephony_api
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./backend:/home/app # Mapeia o código local para dentro do contêiner para live reload
+    ports:
+      - "8000:8000"
+    # Passa as variáveis do .env para o ambiente do contêiner da API
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - SECRET_KEY=${SECRET_KEY}
+      - TEST_DATABASE_URL=${TEST_DATABASE_URL}
+    # Garante que a API só vai iniciar depois que o banco de dados estiver saudável
+    depends_on:
+      db:
+        condition: service_healthy
+
+# Frontend/React
+
+  web:
+    build:
+      context: ./frontend # Diz para construir a imagem usando o Dockerfile na pasta 'frontend'
+    container_name: telephony_web
+    ports:
+      - "3000:80" # porta do Nginx
+    depends_on:
+      # Garante que o frontend só inicie depois da API.
+      - api
+
+volumes:
+  postgres_data:
+    driver: local

@@ -1,0 +1,136 @@
+telephony-dashboard/
+├── .env.example
+├── .gitignore
+├── docker-compose.yml
+├── README.md
+│
+├── backend/
+│   ├── .venv/
+│   ├── alembic/
+│   │   ├── versions/
+│   │   └── script.py.mako
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   │
+│   │   ├── api/
+│   │   │   ├── __init__.py
+│   │   │   └── v1/
+│   │   │       ├── __init__.py
+│   │   │       ├── api.py
+│   │   │       └── endpoints/
+│   │   │           ├── __init__.py
+│   │   │           ├── auth.py
+│   │   │           ├── users.py
+│   │   │           ├── calls.py
+│   │   │           └── metrics.py
+│   │   │
+│   │   ├── core/
+│   │   │   ├── __init__.py
+│   │   │   ├── config.py
+│   │   │   └── security.py
+│   │   │
+│   │   ├── crud/
+│   │   │   ├── __init__.py
+│   │   │   ├── base.py
+│   │   │   ├── crud_user.py
+│   │   │   └── crud_call.py
+│   │   │
+│   │   ├── db/
+│   │   │   ├── __init__.py
+│   │   │   ├── base.py
+│   │   │   └── session.py
+│   │   │
+│   │   ├── models/
+│   │   │   ├── __init__.py
+│   │   │   ├── user.py
+│   │   │   └── call.py
+│   │   │
+│   │   ├── schemas/
+│   │   │   ├── __init__.py
+│   │   │   ├── call.py
+│   │   │   ├── msg.py
+│   │   │   ├── token.py
+│   │   │   └── user.py
+│   │   │
+│   │   ├── services/
+│   │   │   ├── __init__.py
+│   │   │   ├── call_ingestion_service.py
+│   │   │   └── metrics_service.py
+│   │   │
+│   │   ├── scripts/
+│   │   │   ├── __init__.py
+│   │   │   └── create_superuser.py
+│   │   │
+│   │   └── tests/
+│   │       ├── __init__.py
+│   │       ├── conftest.py
+│   │       └── test_api/
+│   │           ├── __init__.py
+│   │           └── v1/
+│   │               ├── __init__.py
+│   │               ├── test_auth.py
+│   │               ├── test_users.py
+│   │               └── test_metrics.py
+│   │
+│   ├── alembic.ini
+│   ├── Dockerfile
+│   └── pyproject.toml
+│
+└── frontend/
+    ├── public/
+    │   ├── favicon.ico
+    │   └── index.html
+    ├── src/
+    │   ├── api/
+    │   │   ├── client.ts
+    │   │   └── index.ts
+    │   │
+    │   ├── assets/
+    │   │   └── logo.svg
+    │   │
+    │   ├── components/
+    │   │   ├── common/
+    │   │   │   ├── Button.tsx
+    │   │   │   └── KpiCard.tsx
+    │   │   ├── dashboard/
+    │   │   │   ├── CallsChart.tsx
+    │   │   │   └── CallsTable.tsx
+    │   │   └── layout/
+    │   │       ├── Header.tsx
+    │   │       └── Sidebar.tsx
+    │   │
+    │   ├── hooks/
+    │   │   ├── useAuth.ts
+    │   │   └── useRequireAuth.ts
+    │   │
+    │   ├── pages/
+    │   │   ├── DashboardPage.tsx
+    │   │   ├── LoginPage.tsx
+    │   │   └── NotFoundPage.tsx
+    │   │
+    │   ├── routes/
+    │   │   └── index.tsx
+    │   │
+    │   ├── store/
+    │   │   ├── authStore.ts
+    │   │   └── dashboardStore.ts
+    │   │
+    │   ├── styles/
+    │   │   └── global.css
+    │   │
+    │   ├── types/
+    │   │   └── index.ts
+    │   │
+    │   ├── utils/
+    │   │   └── formatters.ts
+    │   │
+    │   ├── App.tsx
+    │   └── main.tsx
+    │
+    ├── .eslintrc.cjs
+    ├── Dockerfile
+    ├── index.html
+    ├── package.json
+    ├── tsconfig.json
+    └── vite.config.ts

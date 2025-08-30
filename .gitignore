@@ -1,0 +1,28 @@
+# Arquivos de Ambiente
+.env
+*.env.*
+!/.env.example
+
+# Dependências e Cache do Backend
+backend/.venv/
+backend/venv/
+backend/__pycache__/
+backend/app/__pycache__/
+backend/app/*/__pycache__/
+backend/app/*/*/__pycache__/
+backend/app/*/*/*/__pycache__/
+backend/.pytest_cache/
+backend/*.egg-info/
+
+# Dependências e Cache do Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.DS_Store
+frontend/.env
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Arquivos de IDEs
+.vscode/
+.idea/

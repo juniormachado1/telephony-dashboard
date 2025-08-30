@@ -1,0 +1,24 @@
+# Ignora o ambiente virtual local
+.venv/
+venv/
+
+# Ignora arquivos de cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignora arquivos de cache de ferramentas de teste/linting
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Ignora arquivos de configuração de IDEs
+.vscode/
+.idea/
+
+# Ignora o diretório do git
+.git
+
+# Ignora arquivos de ambiente local
+.env
