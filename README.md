@@ -98,7 +98,7 @@ Certifique-se de ter instalado:
 
 1. **Clone o repositório:**
 ```bash
-git clone git clone https://github.com/juniormachado1/telephony-dashboard
+git clone https://github.com/juniormachado1/telephony-dashboard
 ```
 
 2. **Entre na pasta do projeto:**
