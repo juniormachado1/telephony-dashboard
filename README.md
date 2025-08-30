@@ -20,7 +20,7 @@ Uma aplicação web full-stack para visualização de métricas de chamadas tele
     - [🖥 Uso da Aplicação](#-uso-da-aplicação)
     - [Criando o Primeiro Usuário](#criando-o-primeiro-usuário)
     - [Rodando os Testes](#rodando-os-testes)
-  - [📘 Documentação da API](#-documentação-da-api)
+  - [Documentação da API](#-documentação-da-api)
 
 ---
 
@@ -128,7 +128,7 @@ docker compose up -d --build
 
 ---
 
-### 🖥 Uso da Aplicação
+### Uso da Aplicação
 
 Após subir os contêineres, acesse:  
 - Frontend (Dashboard): [http://localhost:3000](http://localhost:3000)  
@@ -159,7 +159,7 @@ docker compose run --rm api pytest app/tests
 
 ---
 
-## 📘 Documentação da API
+## Documentação da API
 
 A documentação é gerada automaticamente pelo **FastAPI** em **Swagger UI**:  
  [http://localhost:8000/docs](http://localhost:8000/docs)
