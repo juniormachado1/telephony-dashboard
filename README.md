@@ -17,7 +17,7 @@ Uma aplicação web full-stack para visualização de métricas de chamadas tele
   - [Começando](#começando)
     - [Pré-requisitos](#pré-requisitos)
     - [Instalação](#instalação)
-    - [🖥 Uso da Aplicação](#-uso-da-aplicação)
+    - [Uso da Aplicação](#-uso-da-aplicação)
     - [Criando o Primeiro Usuário](#criando-o-primeiro-usuário)
     - [Rodando os Testes](#rodando-os-testes)
   - [Documentação da API](#-documentação-da-api)
